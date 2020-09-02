@@ -95,6 +95,10 @@ Verify the branch was created by listing the branches using the above command.
 
 <kbd> git branch </kbd> 
 
+Do not forget to switch to the new branch you just created.    
+
+<kbd> git checkout <branch_name> </kbd>
+
 ## Step 8:  create a file
 
 ```bash
