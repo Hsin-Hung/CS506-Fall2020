@@ -25,4 +25,3 @@ def cosine_sim(x, y):
     return numer/deno
 
 # Feel free to add more
-print(jaccard_dist([0,0], [1,0]))
