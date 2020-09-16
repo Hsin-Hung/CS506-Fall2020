@@ -10,9 +10,7 @@ def jaccard_dist(x, y):
 
     union = len(list(set.union(set(x), set(y))))
     inter = len(list(set.intersection(set(x), set(y))))
-
-    print(inter)
-
+    
     if union == 0 or inter == 0:
         return 1
     return (union - inter)/(union)
