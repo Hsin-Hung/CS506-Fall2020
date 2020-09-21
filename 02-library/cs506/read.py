@@ -10,7 +10,26 @@ def read_csv(csv_file_path):
         lines = file.read().splitlines()
 
         for row in lines:
-            ret.append([int(i) if i.isnumeric() else i[1:-1] for i in row.split(",")])
+
+            lst = []
+
+            for i in row.split(","):
+
+                try:
+                    f = float(i)
+                    if f.is_integer():
+                        f = int(i)
+                    lst.append(f)
+
+                except ValueError:
+                    try: 
+                        lst.append(i[1:-1])
+                    except ValueError:
+                        print("ValueError")
+
+
+            ret.append(lst)
+            
 
 
     return ret

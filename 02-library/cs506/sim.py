@@ -13,15 +13,17 @@ def jaccard_dist(x, y):
     union = len(list(set.union(set(x), set(y))))
     inter = len(list(set.intersection(set(x), set(y))))
     
-    if union == 0 or inter == 0:
+    if union == 0:
         return 1
     return (union - inter)/(union)
 
 def cosine_sim(x, y):
     numer = sum([i[0]*i[1]  for i in zip(x,y)])
-    deno = (sum(list(map(sqrt,x))) + sum(list(map(sqrt,y))))
-    if deno == 0 or x == y:
+    deno = sqrt(sum([i**2 for i in x])) * sqrt(sum([j**2 for j in y]))
+
+    if deno == 0:
         return 1
+
     return numer/deno
 
 # Feel free to add more
